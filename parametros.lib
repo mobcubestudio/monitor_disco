@@ -1,0 +1,13 @@
+# parametros.lib
+# PARAMETROS GERAIS DO SISTEMA
+
+# LOCALIZAÇÃO DA PASTA DO BOT
+LOCAL_BOT={LOCAL DO SCRIPT}
+
+# PARAMETROS DE ESPAÇO EM DISCO
+NOME_DISCO={LOCAL DO HD}
+ESPACO_DISCO_DISPONIVEL=$(echo $(df -H $NOME_DISCO | grep -vE '^Filesystem|tmpfs|cdrom|loop|Disp' | awk '{ print $4 " " $1 }') | awk '{ print $1}' | cut -d'G' -f1  )			
+ESPACO_DISCO_MODERADO=30
+ESPACO_DISCO_CRITICO=10
+
+
